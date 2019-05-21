@@ -17,105 +17,67 @@ namespace SalaryCalculator.API.Repositories
         where T : class
     {
         private static readonly TimeSpan cacheDuration = TimeSpan.FromDays(7);
-        public virtual async Task<ICollection<T>> GetAllAsync()
+        public virtual async Task<IDictionary<Guid,T>> GetAllAsync(string cacheKey)
         {
-            return MemoryCache.Default.Get((T).CacheKey);
+            IDictionary<Guid, T> set = MemoryCache.Default.Get(cacheKey) as IDictionary<Guid, T>;
+            if (set == null)
+            {
+                set = new Dictionary<Guid, T>();
+                MemoryCache.Default.Set(cacheKey, set, DateTime.Now.Add(cacheDuration));
+            }
+            return set;
         }
 
-        public virtual async Task<T> GetByIdAsync(int id)
+        public virtual async Task<T> GetByIdAsync(string cacheKey, Guid guid)
         {
-            return await _dbSet.FindAsync(id);
-        }
-
-        public virtual async Task<T> InsertAsync(T entity)
-        {
-            var dbEntry = _dbContext.Entry(entity);
-            if (dbEntry.State != EntityState.Detached)
-                dbEntry.State = EntityState.Added;
-            else
-                _dbSet.Add(entity);
-            _dbContext.SaveChanges();
-            return dbEntry.Entity;
-        }
-
-        public virtual async Task<T> UpdateAsync(T entity, int id)
-        {
-            if (entity == null)
+            IDictionary<Guid, T> set = MemoryCache.Default.Get(cacheKey) as IDictionary<Guid, T>;
+            if (set == null)
+            {
+                set = new Dictionary<Guid, T>();
+                MemoryCache.Default.Set(cacheKey, set, DateTime.Now.Add(cacheDuration));
                 return null;
-
-            T existing = await _dbContext.Set<T>().FindAsync(id);
-            if (existing != null)
-            {
-                _dbContext.Entry(existing).CurrentValues.SetValues(entity);
-                await _dbContext.SaveChangesAsync();
             }
-            return existing;
+            return set[guid];
         }
 
-        public virtual async Task<int> DeleteAsync(int id)
+        public virtual async Task<T> InsertAsync(T model, string cacheKey, Guid guid)
         {
-            var entityToDelete = await _dbSet.FindAsync(id);
-
-            if (entityToDelete == null) return 0;
-
-            _dbSet.Remove(entityToDelete);
-            return await _dbContext.SaveChangesAsync();
-        }
-
-        public virtual async Task<int> DeleteAsync(Expression<Func<T, bool>> where)
-        {
-            var entityToDelete = await _dbSet.Where(where).FirstOrDefaultAsync();
-
-            if (entityToDelete == null) return 0;
-
-            _dbSet.Remove(entityToDelete);
-            return await _dbContext.SaveChangesAsync();
-        }
-
-
-        public virtual async Task<T> FindAsync(Expression<Func<T, bool>> match)
-        {
-            return await _dbSet.SingleOrDefaultAsync(match);
-        }
-
-        public virtual async Task<ICollection<T>> FindManyAsync(Expression<Func<T, bool>> where)
-        {
-            return await _dbSet.Where(where).ToListAsync();
-        }
-
-        public virtual async Task<int> CountAsync(Expression<Func<T, bool>> where)
-        {
-            return await _dbSet.CountAsync(where);
-        }
-
-        public virtual async Task<bool> AnyAsync(Expression<Func<T, bool>> where)
-        {
-            return await _dbSet.AnyAsync(where);
-        }
-
-        public virtual async Task<TResult> MaxAsync<TResult>(Expression<Func<T, bool>> where, Expression<Func<T, TResult>> property)
-        {
-            return await _dbSet.Where(where).MaxAsync(property);
-        }
-
-        #endregion
-
-        public virtual void Dispose()
-        {
-            Dispose(true);
-            GC.SuppressFinalize(this);
-        }
-
-        protected virtual void Dispose(bool disposing)
-        {
-            if (disposing)
+            IDictionary<Guid, T> set = MemoryCache.Default.Get(cacheKey) as IDictionary<Guid, T>;
+            if (set == null)
             {
-                if (_dbContext != null)
-                {
-                    _dbContext.Dispose();
-                    _dbContext = null;
-                }
+                set = new Dictionary<Guid, T>();
+                MemoryCache.Default.Set(cacheKey, set, DateTime.Now.Add(cacheDuration));
             }
+            set[guid] = model;
+            MemoryCache.Default.Set(cacheKey, set, DateTime.Now.Add(cacheDuration));
+            return model;
+        }
+
+        public virtual async Task<T> UpdateAsync(T model, string cacheKey, Guid guid)
+        {
+            IDictionary<Guid, T> set = MemoryCache.Default.Get(cacheKey) as IDictionary<Guid, T>;
+            if (set == null)
+            {
+                set = new Dictionary<Guid, T>();
+                MemoryCache.Default.Set(cacheKey, set, DateTime.Now.Add(cacheDuration));
+            }
+            set[guid] = model;
+            MemoryCache.Default.Set(cacheKey, set, DateTime.Now.Add(cacheDuration));
+            return model;
+        }
+
+        public virtual async Task<bool> DeleteAsync(T model, string cacheKey, Guid guid)
+        {
+            IDictionary<Guid, T> set = MemoryCache.Default.Get(cacheKey) as IDictionary<Guid, T>;
+            if (set == null)
+            {
+                set = new Dictionary<Guid, T>();
+                MemoryCache.Default.Set(cacheKey, set, DateTime.Now.Add(cacheDuration));
+                return false;
+            }
+            set.Remove(guid);
+            MemoryCache.Default.Set(cacheKey, set, DateTime.Now.Add(cacheDuration));
+            return true;
         }
     }
 }

@@ -11,28 +11,16 @@ namespace SalaryCalculator.API.Repositories.Interfaces
     /// Generic Base Repository Interface for interacting with Memory Cache
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public interface IRepository<T> : IDisposable where T : class
+    public interface IRepository<T>
     {
-        Task<ICollection<T>> GetAllAsync();
+        Task<IDictionary<Guid, T>> GetAllAsync(string cacheKey);
 
-        Task<T> GetByIdAsync(int id);
+        Task<T> GetByIdAsync(string cacheKey, Guid guid);
 
-        Task<T> InsertAsync(T entity);
+        Task<T> InsertAsync(T model, string cacheKey, Guid guid);
 
-        Task<T> UpdateAsync(T entity, int id);
+        Task<T> UpdateAsync(T model, string cacheKey, Guid guid);
 
-        Task<int> DeleteAsync(int id);
-
-        Task<int> DeleteAsync(Expression<Func<T, bool>> where);
-
-        Task<T> FindAsync(Expression<Func<T, bool>> match);
-
-        Task<ICollection<T>> FindManyAsync(Expression<Func<T, bool>> where);
-
-        Task<int> CountAsync(Expression<Func<T, bool>> where);
-
-        Task<bool> AnyAsync(Expression<Func<T, bool>> where);
-
-        Task<TResult> MaxAsync<TResult>(Expression<Func<T, bool>> where, Expression<Func<T, TResult>> property);
+        Task<bool> DeleteAsync(T model, string cacheKey, Guid guid);
     }
 }
