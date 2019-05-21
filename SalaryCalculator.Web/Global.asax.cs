@@ -7,11 +7,10 @@ using System.Web.Routing;
 
 namespace SalaryCalculator.Web
 {
-    public class WebApiApplication : System.Web.HttpApplication
+    public class WebApplication : System.Web.HttpApplication
     {
         protected void Application_Start()
         {
-            GlobalConfiguration.Configure(WebApiConfig.Register);
         }
     }
 }

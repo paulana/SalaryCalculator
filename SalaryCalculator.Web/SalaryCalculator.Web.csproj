@@ -16,7 +16,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SalaryCalculator.Web</RootNamespace>
     <AssemblyName>SalaryCalculator.Web</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
@@ -59,9 +59,9 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
@@ -83,17 +83,73 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="app\app.component.css" />
-    <Content Include="app\app.component.html" />
+    <Content Include="documentation\css\bootstrap.min.css" />
+    <Content Include="documentation\css\documentation.css" />
+    <Content Include="documentation\css\light-bootstrap-dashboard.css" />
+    <Content Include="documentation\tutorial-lbd-angular2.html" />
+    <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="index.html" />
-    <Content Include="styles.css" />
-    <Content Include="systemjs.config.extras.js" />
-    <Content Include="systemjs.config.js" />
+    <Content Include="index~.html" />
+    <Content Include="karma.conf.js" />
+    <Content Include="protractor.conf.js" />
+    <Content Include="src\app\app.component.css" />
+    <Content Include="src\app\app.component.html" />
+    <Content Include="src\app\home\home.component.css" />
+    <Content Include="src\app\home\home.component.html" />
+    <Content Include="src\app\icons\icons.component.css" />
+    <Content Include="src\app\icons\icons.component.html" />
+    <Content Include="src\app\layouts\admin-layout\admin-layout.component.html" />
+    <Content Include="src\app\lbd\lbd-chart\lbd-chart.component.html" />
+    <Content Include="src\app\maps\maps.component.css" />
+    <Content Include="src\app\maps\maps.component.html" />
+    <Content Include="src\app\notifications\notifications.component.css" />
+    <Content Include="src\app\notifications\notifications.component.html" />
+    <Content Include="src\app\shared\footer\footer.component.html" />
+    <Content Include="src\app\shared\navbar\navbar.component.html" />
+    <Content Include="src\app\sidebar\sidebar.component.html" />
+    <Content Include="src\app\tables\tables.component.css" />
+    <Content Include="src\app\tables\tables.component.html" />
+    <Content Include="src\app\typography\typography.component.css" />
+    <Content Include="src\app\typography\typography.component.html" />
+    <Content Include="src\app\upgrade\upgrade.component.css" />
+    <Content Include="src\app\upgrade\upgrade.component.html" />
+    <Content Include="src\app\user\user.component.css" />
+    <Content Include="src\app\user\user.component.html" />
+    <Content Include="src\assets\css\demo.css" />
+    <Content Include="src\assets\css\pe-icon-7-stroke.css" />
+    <Content Include="src\assets\fonts\Pe-icon-7-stroke.svg" />
+    <Content Include="src\assets\img\angular-red.png" />
+    <Content Include="src\assets\img\angular2-logo-white.png" />
+    <Content Include="src\assets\img\angular2-logo.png" />
+    <Content Include="src\assets\img\default-avatar.png" />
+    <Content Include="src\assets\img\faces\face-0.jpg" />
+    <Content Include="src\assets\img\faces\face-1.jpg" />
+    <Content Include="src\assets\img\faces\face-2.jpg" />
+    <Content Include="src\assets\img\faces\face-3.jpg" />
+    <Content Include="src\assets\img\faces\face-4.jpg" />
+    <Content Include="src\assets\img\faces\face-5.jpg" />
+    <Content Include="src\assets\img\faces\face-6.jpg" />
+    <Content Include="src\assets\img\faces\face-7.jpg" />
+    <Content Include="src\assets\img\faces\tim_vector.jpe" />
+    <Content Include="src\assets\img\favicon.ico" />
+    <Content Include="src\assets\img\full-screen-image-3.jpg" />
+    <Content Include="src\assets\img\loader-preview.svg" />
+    <Content Include="src\assets\img\loading-bubbles.svg" />
+    <Content Include="src\assets\img\mask.png" />
+    <Content Include="src\assets\img\new_logo.png" />
+    <Content Include="src\assets\img\opt_lbd_angular_thumbnail.jpg" />
+    <Content Include="src\assets\img\sidebar-1.jpg" />
+    <Content Include="src\assets\img\sidebar-2.jpg" />
+    <Content Include="src\assets\img\sidebar-3.jpg" />
+    <Content Include="src\assets\img\sidebar-4.jpg" />
+    <Content Include="src\assets\img\sidebar-5.jpg" />
+    <Content Include="src\assets\img\tim_80x80.png" />
+    <Content Include="src\favicon.ico" />
+    <Content Include="src\index.html" />
+    <Content Include="src\styles.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -102,7 +158,45 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <Content Include="package.json" />
-    <Content Include="tsconfig.json" />
+    <Content Include="e2e\tsconfig.json" />
+    <Content Include="src\app\layouts\admin-layout\admin-layout.component.scss" />
+    <Content Include="src\assets\.gitkeep" />
+    <Content Include="src\assets\fonts\Pe-icon-7-stroke.eot" />
+    <Content Include="src\assets\fonts\Pe-icon-7-stroke.ttf" />
+    <Content Include="src\assets\fonts\Pe-icon-7-stroke.woff" />
+    <Content Include="src\assets\sass\lbd\mixins\_buttons.scss" />
+    <Content Include="src\assets\sass\lbd\mixins\_cards.scss" />
+    <Content Include="src\assets\sass\lbd\mixins\_chartist.scss" />
+    <Content Include="src\assets\sass\lbd\mixins\_icons.scss" />
+    <Content Include="src\assets\sass\lbd\mixins\_inputs.scss" />
+    <Content Include="src\assets\sass\lbd\mixins\_labels.scss" />
+    <Content Include="src\assets\sass\lbd\mixins\_morphing-buttons.scss" />
+    <Content Include="src\assets\sass\lbd\mixins\_navbars.scss" />
+    <Content Include="src\assets\sass\lbd\mixins\_social-buttons.scss" />
+    <Content Include="src\assets\sass\lbd\mixins\_tabs.scss" />
+    <Content Include="src\assets\sass\lbd\mixins\_transparency.scss" />
+    <Content Include="src\assets\sass\lbd\mixins\_vendor-prefixes.scss" />
+    <Content Include="src\assets\sass\lbd\_alerts.scss" />
+    <Content Include="src\assets\sass\lbd\_buttons.scss" />
+    <Content Include="src\assets\sass\lbd\_cards.scss" />
+    <Content Include="src\assets\sass\lbd\_chartist.scss" />
+    <Content Include="src\assets\sass\lbd\_checkbox-radio-switch.scss" />
+    <Content Include="src\assets\sass\lbd\_dropdown.scss" />
+    <Content Include="src\assets\sass\lbd\_footers.scss" />
+    <Content Include="src\assets\sass\lbd\_inputs.scss" />
+    <Content Include="src\assets\sass\lbd\_misc.scss" />
+    <Content Include="src\assets\sass\lbd\_mixins.scss" />
+    <Content Include="src\assets\sass\lbd\_navbars.scss" />
+    <Content Include="src\assets\sass\lbd\_responsive.scss" />
+    <Content Include="src\assets\sass\lbd\_sidebar-and-main-panel.scss" />
+    <Content Include="src\assets\sass\lbd\_tables.scss" />
+    <Content Include="src\assets\sass\lbd\_typography.scss" />
+    <Content Include="src\assets\sass\lbd\_variables.scss" />
+    <Content Include="src\assets\sass\light-bootstrap-dashboard.scss" />
+    <Content Include="src\tsconfig.json" />
+    <Content Include="angular.json" />
+    <Content Include="tslint.json" />
+    <Content Include="typings.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -110,18 +204,50 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="app\app.component.ts" />
-    <TypeScriptCompile Include="app\app.module.ts" />
-    <TypeScriptCompile Include="app\main.ts" />
+    <TypeScriptCompile Include="e2e\app.e2e-spec.ts" />
+    <TypeScriptCompile Include="e2e\app.po.ts" />
+    <TypeScriptCompile Include="src\app\app.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\app.component.ts" />
+    <TypeScriptCompile Include="src\app\app.module.ts" />
+    <TypeScriptCompile Include="src\app\app.routing.ts" />
+    <TypeScriptCompile Include="src\app\home\home.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\home\home.component.ts" />
+    <TypeScriptCompile Include="src\app\icons\icons.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\icons\icons.component.ts" />
+    <TypeScriptCompile Include="src\app\layouts\admin-layout\admin-layout.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\layouts\admin-layout\admin-layout.component.ts" />
+    <TypeScriptCompile Include="src\app\layouts\admin-layout\admin-layout.module.ts" />
+    <TypeScriptCompile Include="src\app\layouts\admin-layout\admin-layout.routing.ts" />
+    <TypeScriptCompile Include="src\app\lbd\lbd-chart\lbd-chart.component.ts" />
+    <TypeScriptCompile Include="src\app\lbd\lbd.module.ts" />
+    <TypeScriptCompile Include="src\app\maps\maps.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\maps\maps.component.ts" />
+    <TypeScriptCompile Include="src\app\notifications\notifications.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\notifications\notifications.component.ts" />
+    <TypeScriptCompile Include="src\app\shared\footer\footer.component.ts" />
+    <TypeScriptCompile Include="src\app\shared\footer\footer.module.ts" />
+    <TypeScriptCompile Include="src\app\shared\navbar\navbar.component.ts" />
+    <TypeScriptCompile Include="src\app\shared\navbar\navbar.module.ts" />
+    <TypeScriptCompile Include="src\app\sidebar\sidebar.component.ts" />
+    <TypeScriptCompile Include="src\app\sidebar\sidebar.module.ts" />
+    <TypeScriptCompile Include="src\app\tables\tables.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\tables\tables.component.ts" />
+    <TypeScriptCompile Include="src\app\typography\typography.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\typography\typography.component.ts" />
+    <TypeScriptCompile Include="src\app\upgrade\upgrade.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\upgrade\upgrade.component.ts" />
+    <TypeScriptCompile Include="src\app\user\user.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\user\user.component.ts" />
+    <TypeScriptCompile Include="src\environments\environment.prod.ts" />
+    <TypeScriptCompile Include="src\environments\environment.ts" />
+    <TypeScriptCompile Include="src\main.ts" />
+    <TypeScriptCompile Include="src\polyfills.ts" />
+    <TypeScriptCompile Include="src\test.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

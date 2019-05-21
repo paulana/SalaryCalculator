@@ -23,6 +23,8 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -33,7 +35,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>AppOrange-2016-300x300.ico</ApplicationIcon>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
@@ -85,6 +87,7 @@
   <ItemGroup>
     <Content Include="App.config" />
     <Content Include="AppOrange-2016-300x300.ico" />
+    <Content Include="favicon.ico" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -98,9 +101,9 @@
       <Project>{e983c747-e71b-4f2c-85d1-76a65da7643c}</Project>
       <Name>SalaryCalculator.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SalaryCalculator\SalaryCalculator.csproj">
-      <Project>{5DA7CE7E-6D98-40D2-8C4F-E1DF5A404BCA}</Project>
-      <Name>SalaryCalculator</Name>
+    <ProjectReference Include="..\SalaryCalculator.Web\SalaryCalculator.Web.csproj">
+      <Project>{06afcf8e-0276-4696-b0d8-4b0265cc89c0}</Project>
+      <Name>SalaryCalculator.Web</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

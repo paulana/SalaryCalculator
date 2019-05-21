@@ -5,7 +5,8 @@ using System.Web;
 
 namespace SalaryCalculator.Common.Models
 {
-    public class SalaryCalculation
+    public class SalaryCalculationResponse
     {
+
     }
 }
