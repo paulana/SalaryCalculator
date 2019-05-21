@@ -9,6 +9,7 @@ namespace SalaryCalculator.Common.Models
     public class Dependent
     {
         public static string CacheKey = "Dependent";
+        public static Single DiscountRate = 0.1F;
 
         public Guid DependentId = Guid.NewGuid();
         public Guid Employee { get; set; }

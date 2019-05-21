@@ -7,5 +7,7 @@ namespace SalaryCalculator.Common.Models
 {
     public class SalaryCalculationRequest
     {
+        public Guid Employee { get; set; }
+        public Guid[] Dependents { get; set; }
     }
 }
