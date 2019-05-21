@@ -1,9 +1,6 @@
 using SalaryCalculator.API.Repositories.Interfaces;
 using System;
 using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Linq.Expressions;
 using System.Runtime.Caching;
 using System.Threading.Tasks;
 
@@ -66,7 +63,7 @@ namespace SalaryCalculator.API.Repositories
             return model;
         }
 
-        public virtual async Task<bool> DeleteAsync(T model, string cacheKey, Guid guid)
+        public virtual async Task<bool> DeleteAsync(string cacheKey, Guid guid)
         {
             IDictionary<Guid, T> set = MemoryCache.Default.Get(cacheKey) as IDictionary<Guid, T>;
             if (set == null)

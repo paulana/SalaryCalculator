@@ -1,17 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SalaryCalculator.Common.Models
 {
     public class Dependent
     {
-        public static string CacheKey = "Dependent";
-        public static Single DiscountRate = 0.1F;
-
-        public Guid DependentId = Guid.NewGuid();
+        public Guid DependentID { get; } = Guid.NewGuid();
+        public static decimal DiscountRate { get; set; } = 0.1M;
+        public static string CacheKey { get; } = "Dependent";
         public Guid Employee { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set;}

@@ -1,9 +1,7 @@
 ﻿using SalaryCalculator.Common.Models;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-using System.Web;
 
 namespace SalaryCalculator.API.Services.Interfaces
 {
@@ -13,6 +11,7 @@ namespace SalaryCalculator.API.Services.Interfaces
     public interface IEmployeeService
     {
         Task<Employee> Get(Guid guid);
+        Task<IDictionary<Guid,Employee>> GetAll();
         Task<Employee> Put(Employee model);
         Task<Employee> Post(Employee model);
         Task<bool> Delete(Guid guid);

@@ -1,9 +1,7 @@
 ﻿using SalaryCalculator.Common.Models;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-using System.Web;
 
 namespace SalaryCalculator.API.Services.Interfaces
 {
@@ -12,6 +10,7 @@ namespace SalaryCalculator.API.Services.Interfaces
     /// </summary>
     public interface IDependentService
     {
+        Task<IDictionary<Guid, Dependent>> GetAll();
         Task<Dependent> Get(Guid guid);
         Task<Dependent> Put(Dependent model);
         Task<Dependent> Post(Dependent model);

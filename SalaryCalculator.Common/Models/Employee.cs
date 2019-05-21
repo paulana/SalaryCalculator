@@ -1,21 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SalaryCalculator.Common.Models
 {
     public class Employee
     {
-        public static string CacheKey = "Employee";
-        public Guid EmployeeID = Guid.NewGuid();
-
+        public Guid EmployeeID { get; } = Guid.NewGuid();
+        public static string CacheKey { get; } = "Employee";
         public string FirstName { get; set; }
         public string LastName { get; set; }
-
-        public static int PayCheck = 2000;
-        public static int TotalPayChecks = 26;
-        public static int Salary = PayCheck * TotalPayChecks; 
+        public decimal BenefitCost { get; set; }
+        public decimal CheckAfterBenefits { get; set; }
+        public int Salary { get; set; } = PayCheck * TotalPayChecks;
+        public static int PayCheck { get; set; } = 2000;
+        public static int TotalPayChecks { get; set; } = 26;
     }
 }
