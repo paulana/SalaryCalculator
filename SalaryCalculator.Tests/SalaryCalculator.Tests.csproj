@@ -81,6 +81,9 @@
     <Reference Include="System.Net.Http.WebRequest" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Services\CalculationServiceTest.cs" />
+    <Compile Include="Services\DependentServiceTest.cs" />
+    <Compile Include="Services\EmployeeServiceTest.cs" />
     <Compile Include="Controllers\DependentControllerTest.cs" />
     <Compile Include="Controllers\EmployeeControllerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

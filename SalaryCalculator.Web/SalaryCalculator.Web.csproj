@@ -194,7 +194,7 @@
     <Content Include="src\assets\sass\lbd\_typography.scss" />
     <Content Include="src\assets\sass\lbd\_variables.scss" />
     <Content Include="src\assets\sass\light-bootstrap-dashboard.scss" />
-    <Content Include="src\tsconfig.json" />
+    <Content Include="tsconfig.json" />
     <Content Include="angular.json" />
     <Content Include="tslint.json" />
     <Content Include="typings.json" />

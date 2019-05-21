@@ -37,6 +37,17 @@ namespace SalaryCalculator.Tests.Controllers
         }
 
         [TestMethod]
+        public void InsertDependent()
+        {
+            // Arrange
+            DependentController controller = new DependentController(_dependentService);
+
+            // Act
+
+            // Assert
+        }
+
+        [TestMethod]
         public void UpdateDependent()
         {
             // Arrange

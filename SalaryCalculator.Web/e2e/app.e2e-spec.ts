@@ -9,6 +9,6 @@ describe('lbd-free-angularcli App', function() {
 
   it('should display message saying app works', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('app works!');
+    expect<any>(page.getParagraphText()).toEqual('app works!');
   });
 });

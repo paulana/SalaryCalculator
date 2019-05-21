@@ -37,6 +37,17 @@ namespace SalaryCalculator.Tests.Controllers
         }
 
         [TestMethod]
+        public void InsertEmployee()
+        {
+            // Arrange
+            EmployeeController controller = new EmployeeController(_employeeService);
+
+            // Act
+
+            // Assert
+        }
+
+        [TestMethod]
         public void UpdateEmployee()
         {
             // Arrange

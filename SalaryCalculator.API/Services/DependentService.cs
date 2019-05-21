@@ -17,6 +17,11 @@ namespace SalaryCalculator.API.Services
         /// <summary>
         /// Dependent Service constructor
         /// </summary>
+        public DependentService(IDependentRepository repository)
+        {
+            _repository = repository;
+        } 
+
         public async Task<IDictionary<Guid, Dependent>> GetAll()
         {
             return await _repository.GetAllAsync(Dependent.CacheKey);
