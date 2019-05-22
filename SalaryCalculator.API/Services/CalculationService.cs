@@ -27,7 +27,12 @@ namespace SalaryCalculator.API.Services
             Employee employee = await _employeeRepository.GetByIdAsync(Employee.CacheKey, request.Employee);
             List<Dependent> dependents = new List<Dependent>();
 
-            employee.BenefitCost = 1000;
+            if (employee.FirstName.ToLower().StartsWith("a"))
+            {
+                employee.Discounted = true;
+                employee.BenefitCost = 1000 * Employee.DiscountRate;
+            }
+            else employee.BenefitCost = 1000;
 
             if (request.Dependents.Count > 0)
             {

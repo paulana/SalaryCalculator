@@ -13,5 +13,7 @@ namespace SalaryCalculator.Common.Models
         public int Salary { get; set; } = PayCheck * TotalPayChecks;
         public static int PayCheck { get; set; } = 2000;
         public static int TotalPayChecks { get; set; } = 26;
+        public bool Discounted { get; set; }
+        public static decimal DiscountRate { get; set; }
     }
 }
